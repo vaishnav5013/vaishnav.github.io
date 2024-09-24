@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Ticket Reservation Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="text"], input[type="email"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .total-price {
+            font-size: 1.2em;
+            color: #4CAF50;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #4CAF50;
+        }
+    </style>
+    <script>
+        function calculateTotal() {
+            const pricePerTicket = 500; // price per ticket
+            const numberOfPassengers = document.getElementById('numberOfPassengers').value;
+            const totalPrice = pricePerTicket * numberOfPassengers;
+            document.getElementById('totalPrice').innerText = `Total Price: ₹${totalPrice}`;
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            document.getElementById('paymentForm').reset();
+            document.getElementById('totalPrice').innerText = 'Total Price: ₹500';
+            document.querySelector('.message').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Payment Details</h1>
+    <form id="paymentForm" onsubmit="handleSubmit(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="trainNumber">Train Number:</label>
+        <input type="text" id="trainNumber" name="trainNumber" required>
+
+        <label for="numberOfPassengers">Number of Passengers:</label>
+        <input type="number" id="numberOfPassengers" name="numberOfPassengers" min="1" value="1" onchange="calculateTotal()" required>
+
+        <div class="total-price" id="totalPrice">Total Price: ₹500</div>
+
+        <h3>Payment Method</h3>
+        <label for="paymentMethod">Select Payment Method:</label>
+        <select id="paymentMethod" name="paymentMethod" required>
+            <option value="creditCard">Credit/Debit Card</option>
+            <option value="netBanking">Net Banking</option>
+            <option value="upi">UPI</option>
+            <option value="paypal">PayPal</option>
+            <option value="mobileWallet">Mobile Wallet</option>
+        </select>
+
+        <label for="cardDetails">Card Details:</label>
+        <input type="text" id="cardDetails" name="cardDetails" placeholder="Card Number">
+
+        <button type="submit">Pay Now</button>
+    </form>
+
+    <div class="message">Tickets booked successfully!</div>
+</div>
+
+</body>
+</html>

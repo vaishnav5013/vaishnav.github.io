@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Reservations - Train Ticket Reservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a4c8f8;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #bff0bf;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .no-reservations {
+            text-align: center;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>My Reservations</h1>
+    
+    <!-- Sample Data Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Train Number</th>
+                <th>Train Name</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Passengers</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>12423</td>
+                <td>Rajdhani Express</td>
+                <td>08:00 AM</td>
+                <td>08:00 PM</td>
+                <td>2</td>
+                <td>Booked</td>
+            </tr>
+            <tr>
+                <td>12163</td>
+                <td>Lokmanya Tilak Express</td>
+                <td>06:00 PM</td>
+                <td>11:00 AM (Next Day)</td>
+                <td>1</td>
+                <td>Cancelled</td>
+            </tr>
+            <tr>
+                <td>12301</td>
+                <td>Howrah Rajdhani Express</td>
+                <td>04:30 PM</td>
+                <td>10:00 AM (Next Day)</td>
+                <td>4</td>
+                <td>Booked</td>
+            </tr>
+            <tr>
+                <td>12028</td>
+                <td>Shatabdi Express</td>
+                <td>06:00 AM</td>
+                <td>11:00 AM</td>
+                <td>3</td>
+                <td>Booked</td>
+            </tr>
+            <tr>
+                <td>12701</td>
+                <td>Telangana Express</td>
+                <td>06:00 AM</td>
+                <td>08:00 AM (Next Day)</td>
+                <td>1</td>
+                <td>Pending</td>
+            </tr>
+            <tr>
+                <td>19721</td>
+                <td>Ahmedabad Jaipur Express</td>
+                <td>08:00 AM</td>
+                <td>04:00 PM</td>
+                <td>5</td>
+                <td>Booked</td>
+            </tr>
+            <tr>
+                <td>15651</td>
+                <td>Guwahati Express</td>
+                <td>07:30 AM</td>
+                <td>02:30 PM</td>
+                <td>2</td>
+                <td>Cancelled</td>
+            </tr>
+            <tr>
+                <td>12609</td>
+                <td>Chennai Mail</td>
+                <td>09:00 PM</td>
+                <td>07:00 PM (Next Day)</td>
+                <td>3</td>
+                <td>Booked</td>
+            </tr>
+            <tr>
+                <td>12629</td>
+                <td>Karnataka Express</td>
+                <td>05:00 PM</td>
+                <td>10:00 PM</td>
+                <td>1</td>
+                <td>Pending</td>
+            </tr>
+            <tr>
+                <td>12127</td>
+                <td>Pune Howrah Express</td>
+                <td>11:00 PM</td>
+                <td>10:00 PM (Next Day)</td>
+                <td>2</td>
+                <td>Booked</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="no-reservations" style="display: none;">
+        No reservations found.
+    </div>
+</div>
+
+</body>
+</html>
